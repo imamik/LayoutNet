@@ -5,6 +5,9 @@ See sample [video](https://youtu.be/WDzYXRP6XDs) of 3D reconstruced layouts by o
 
 <img src='figs/teasor.jpg' width=400>
 
+## Third party implementation
+- PyTorch [implementation](https://github.com/zouchuhang/LayoutNet) by [sunset1995](https://github.com/sunset1995)
+
 ## Prerequisites
 - Linux
 - NVIDIA GPU + CUDA CuDNN
@@ -21,11 +24,9 @@ This includes the panoramas from both the panoContext dataset and our labeled st
 
 - Download groundtruth [data](https://drive.google.com/file/d/1j91sz8Jt6Jsg198riA0ggz8Mjj4lSntx/view?usp=sharing) to current folder
 
-This includes the groundtruth 2D posiiton of room corners in .mat format from the two dataset. Note that we've corrected some wrong corner labels in PanoContext to match the layout boundaries.
+This includes the groundtruth 2D position of room corners in .mat format from the two dataset. We've corrected some wrong corner labels in PanoContext to match the layout boundaries.
 
-- Download preprocessed LSUN training/validation/testing [data](https://drive.google.com/file/d/1BSYquS7LietkRiyZMxBlqtY8uZSIsUUg/view?usp=sharing) and related [.t7](https://drive.google.com/file/d/1GCK1NYJRE62DUVj2t5cu3CrCmzoV6urc/view?usp=sharing) file under /data/LSUN\_data/ folder
-
-Note that we've corrected 10% wrong corner labels.
+- Download preprocessed LSUN training/validation/testing [data](https://drive.google.com/file/d/1BSYquS7LietkRiyZMxBlqtY8uZSIsUUg/view?usp=sharing) and related [.t7](https://drive.google.com/file/d/1GCK1NYJRE62DUVj2t5cu3CrCmzoV6urc/view?usp=sharing) file under /data/LSUN\_data/ folder. We've corrected 10% wrong corner labels.
 
 ## Pretrained model
 - Download our pretrained [model](https://drive.google.com/file/d/1bg9ZP3_KA1kvTWpCh4wQ0PfAuCm4j0qa/view?usp=sharing) to current folder. This includes:
@@ -36,6 +37,8 @@ Note that we've corrected 10% wrong corner labels.
 
 ## Image preprocess
 We provide sample script to extract Manhattan lines and align the panorama in ./matlab/getManhattanAndAlign.m.
+
+To get gt edge map, corner map and box parameters, see sample script ./matlab/preprocessPano.m
 
 To convert gt data to .t7 file, see sample code preProcess\_pano.lua
 
